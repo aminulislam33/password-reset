@@ -34,6 +34,7 @@ async function handleSendPasswordResetLink(req, res) {
 
 async function handlePasswordReset(req, res) {
     const { userId, token: tokenParam } = req.params;
+    console.log(`request params are: ${userId} and ${tokenParam}`)
     try {
         const user = await User.findById(userId);
         if (!user) {
